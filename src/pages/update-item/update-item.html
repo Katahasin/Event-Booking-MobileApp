@@ -1,0 +1,40 @@
+
+<ion-header>
+
+    <ion-navbar color="roze"> 
+      
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        upload item proof
+      </ion-title>
+      
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-card color= "blue" >
+        <ion-card-header>name :<strong> {{currentItem?.name}}</strong></ion-card-header>
+        <ion-card-content>
+          <p>price: <strong>{{currentItem?.price}}</strong></p>
+        </ion-card-content>
+   </ion-card>
+
+   <ion-row>
+ 
+   <ion-col col-4>
+      <button color="r" ion-button icon-only (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <span *ngIf="itemPicture">Picture taken!</span>
+
+  <button color="second" [disabled]="!itemPicture" ion-button  block (click)="addItem()">
+    Add picture
+  </button>
+
+</ion-content>

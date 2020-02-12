@@ -1,0 +1,76 @@
+<ion-header>
+
+    <ion-navbar color="roze"> 
+      
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+  
+      </ion-title>
+      
+    </ion-navbar>
+  
+  </ion-header>
+
+<ion-content>
+  <ion-row padding>
+
+    <ion-col col-8>Total budget </ion-col>
+    
+    <ion-col col-4 [class.profitable]="currentEvent?.budget > 0"
+      [class.no-profit]="currentEvent?.budget < 0">
+      {{currentEvent?.budget}}
+    </ion-col>
+
+  </ion-row>
+  <ion-card>
+    <ion-card-header>{{currentEvent?.name}}</ion-card-header>
+    <ion-card-content>
+      <p>Date: <strong>{{currentEvent?.date}}</strong></p>
+      
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="add-item-form">
+  <ion-card-header>
+    Add Items
+  </ion-card-header>
+  <ion-card-content>
+    <ion-row>
+
+      <ion-col col-8>
+        <ion-item>
+          <ion-label stacked>Name</ion-label>
+          <ion-input [(ngModel)]="itemName" type="text"
+            placeholder="What's your item's name?"></ion-input>
+            
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-8>
+        <ion-item>
+          <ion-label stacked>price </ion-label>
+          <ion-input [(ngModel)]="itemPrice" type="number"
+            placeholder="whats the price of your item ?"></ion-input>
+        </ion-item>
+      </ion-col>
+
+     
+
+      <ion-col col-4>
+        <button ion-button icon-only (click)="takePicture()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <span *ngIf="itemPicture">Picture taken!</span>
+
+    <button ion-button color="primary" block (click)="addItem(itemName)"
+    [disabled]="!itemName" [disabled]="!itemPrice">
+      Add Item
+    </button>
+  </ion-card-content>
+</ion-card>
+</ion-content>

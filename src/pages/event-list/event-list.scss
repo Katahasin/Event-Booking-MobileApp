@@ -1,0 +1,23 @@
+page-event-list {
+
+    ion-content{
+    
+  
+        background-image: url("../assets/imgs/backgroundP.jpg");
+        background-size:cover;
+        text-align: center; 
+      }
+
+      .error-message {
+        min-height: 2.2rem;
+        p {
+          font-size: 60%;
+        }
+        ion-label {
+          margin: 2px 0;
+        }
+        .item-inner {
+          border-bottom: 0 !important;
+        }
+      }
+}

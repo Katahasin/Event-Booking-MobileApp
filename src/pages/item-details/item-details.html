@@ -1,0 +1,41 @@
+
+<ion-header>
+
+    <ion-navbar color="roze"> 
+      
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        EVENT'S ITEMS 
+      </ion-title>
+      
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+   
+  <ion-list    *ngFor="let item of itemList">
+
+      <ion-item color= "blue" (click)=removeitem(eventId,item.id,item.price)>
+        <ion-avatar>
+          <img src="https://firebasestorage.googleapis.com/v0/b/feldamobile-app.appspot.com/o/itemProfile%2F{{item?.id}}%2F{{item?.id}}.png?alt=media">
+        </ion-avatar>
+        
+        <p>name: <strong>{{item?.name}}</strong></p>
+        <p>price:  <strong> {{item?.price}}</strong></p>
+        
+        <!-- feldamobile-app.appspot.com -->
+        
+    
+        
+      </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+
+
